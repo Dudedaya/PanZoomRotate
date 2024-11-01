@@ -1,6 +1,15 @@
 # PanZoomRotate
 ItemTouchListener for the view to pan, zoom, and rotate with 1 or 2+ fingers
 
+## Implementation
+Just attach an instance of PanZoomRotateListener to your view:
+
+```kotlin
+binding.imageView.setOnTouchListener(PanZoomRotateListener())
+```
+
+## Code
+
 ```kotlin
 class PanZoomRotateListener : View.OnTouchListener {
     private var startPointerPosition: PointerPositions = PointerPositions.None
