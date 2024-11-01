@@ -80,11 +80,11 @@ private sealed interface PointerPositions {
     class Double(motionEvent: MotionEvent, view: View) : PointerPositions {
         val x1: Float = motionEvent.rawX
         val y1: Float = motionEvent.rawY
-        private val lastPointerIndex = motionEvent.pointerCount - 1
         val x2: Float
         val y2: Float
 
         init {
+            val lastPointerIndex = motionEvent.pointerCount - 1
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 x2 = motionEvent.getRawX(lastPointerIndex)
                 y2 = motionEvent.getRawY(lastPointerIndex)
